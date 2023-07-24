@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Guardian</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+
+    <section id="banner" class="banner">
+
+      <div class="videobg">
+        <video autoplay loop muted>
+          <source src="images\MBG.mp4" type="video/mp4">
+        </video>
+        <audio autoplay loop>
+            <source src="images\bgmusic.mp3" type="audio/mp3">
+        </audio>
+
+        </div>
+
+        <div class="content">
+            <h2>STAR GUARDIAN</h2>
+            <p>Step into a world where the wonders of the universe 
+            come alive, where the mysteries of distant galaxies 
+            and shimmering constellations await your exploration. </p>
+    
+            <a href="#" class="button" onclick="openModal()">    DIVE IN    </a>
+            </div>
+      </section>
+
+      <div class="modal" id="videoModal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+            <video id="modalVideo" controls>
+                <source src="images\akali.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // Function to open the modal and play the video
+        function openModal() {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const videoSource = "images/valoran city.mp4"; // Replace "your_video.mp4" with your actual video file path
+            modalVideo.src = videoSource;
+            modal.style.display = 'block';
+            modalVideo.play();
+            audio.pause(); 
+        }
+    
+        // Function to close the modal and pause the video
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            modal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        }
+    
+        // Function to close the modal if the user clicks outside the video
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('videoModal');
+            if (event.target === modal) {
+                closeModal();
+                audio.play(); 
+            }
+            
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    // Get the modal and button elements
+    var modal = document.getElementById("videoModal");
+    var button = document.querySelector(".video-button");
+    var closeModal = document.querySelector(".close-button");
+    var modalVideo = document.getElementById("modalVideo");
+
+    // Event listener to open the modal when the button is clicked
+    button.addEventListener("click", function () {
+        modal.style.display = "block";
+        modalVideo.play();
+        // Pause the background audio
+        document.querySelector("audio").pause();
+        audio.pause(); 
+    });
+
+    // Event listener to close the modal when the close button (X) is clicked
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        // Resume the background audio
+        document.querySelector("audio").play();
+        audio.play(); 
+    });
+
+    // Event listener to close the modal when clicking outside the modal content
+    window.addEventListener("click", function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            // Resume the background audio
+            document.querySelector("audio").play();
+            audio.play(); 
+        }
+    });
+});
+
+
+        </script>
+        
+
+
+    <div class="banner2">
+      <img src="images\clouds.png" class="cloud-img">
+    </div>
+
+  <section class="about-section" id="about-section">
+      <div class="about-content">
+        <h2>CELESTIAL CHRONICLES</h2>
+        <p class="about-paragraph">In a vast and dark universe, 
+          young warriors are chosen by fate to protect the light 
+          of the stars. <br> They are destined to burn bright, but 
+          collapse as furiously as they shine.
+          The Star Guardians are <span class="more-content"> <br> celestial beings infused with cosmic 
+          energy, emerge as the guardians of hope, sworn to defend <br>
+          the realms against the encroaching shadows.
+        
+          These chosen few possess extraordinary abilities, <br> each uniquely tied 
+          to a specific celestial entity. From the radiant power of the sun to 
+          the mystic <br> energy of distant nebula, their strength is derived from 
+          the very fabric of the cosmos. <br> <br> Armed with enchanted weaponry and 
+          adorned in ethereal armor, they venture into the depths <br> of space
+          and face unimaginable dangers. United by a common purpose and bound by an 
+          <br> unbreakable camaraderie, the Star Guardians stand tall against the relentless 
+          onslaught of the <br> encroaching shadows. They are the defenders of hope, the 
+          guardians of worlds, and the bringers <br> of light. For as long as the stars 
+          illuminate the vast expanse of the cosmos, the Star Guardians <br> shall endure, 
+          ensuring that the flame of hope burns eternal and that darkness shall 
+          never prevail.</span></p>
+
+          <button class="read-more"> READ MORE </button>
+          <script src="font\starguard.js"></script>
+      </div>
+  </section>
+  
+  
+
+    <div class="gal-30">
+    <video autoplay loop muted>
+      <source src="images\akali.mp4" type="video/mp4">
+    </video>
+    </div>
+
+  
+
+    <header>
+        <img src="images\textlogo.png" class="logo">
+        <ul>
+            <li><a href="#banner" class="active">HOME</a></li>
+            <li><a href="#about-section">ABOUT</a></li>
+            <li><a href="#gallery-slider">GALLERY</a></li>
+            <li><a href="#imgbgg">VLOG</a></li>
+            <li><a href="#Meet">TEAM</a></li>
+        </ul>
+    </header>
+
+    <div class="side-bar">
+        <div class="symbol">
+          <img src="images\symbol.png" alt="symbol"></div>
+        <div class="social-links">
+          <a href="#banner" class="active"><img src="images\games.png" alt="games"></a>
+          <a href="#about-section"><img src="images\diamond.png" alt="diamond"></a>
+          <a href="#gallery-slider"><img src="images\friends.png" alt="friends"></a>
+          <a href="#imgbgg"><img src="images\message (1).png" alt="message"></a>
+        </div>
+      </div>
+    
+
+    <div class="sparkle">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+        <img src="images\sparkle.png">
+      </div>
+
+    <section class="Gallery" id="Gallery">
+    <div class="cloudss">
+      <img src="images\cloudsssss1.png" style="--i:1">
+      <img src="images\cloudsssss2.png" style="--i:2">
+      <img src="images\cloudsssss3.png" style="--i:3">
+      <img src="images\cloudsssss1.png" style="--i:4">
+      <img src="images\cloudsssss3.png" style="--i:5">
+    </div>
+
+    <div class="cloudsss">
+      <img src="images\cloudsssss2.png" style="--i:4">
+      <img src="images\cloudsssss2.png" style="--i:5">
+      <img src="images\cloudsssss1.png" style="--i:6">
+      <img src="images\cloudsssss3.png" style="--i:7">
+      <img src="images\cloudsssss2.png" style="--i:8">
+    </div>
+
+        <div class="imgbg">
+            <img src="images\Wallpaper2.png" id="stars">
+        </div>
+        <h1>GALLERY</h1>
+        <div id="gallery-slider" class="gallery">
+            <div><img src="images\gal16.png" alt="gal1"></div>
+            <div><img src="images\gal17.png" alt="gal2"></div>
+            <div><img src="images\gal18.png" alt="gal3"></div>
+            <div><img src="images\gal19.png" alt="gal4"></div>
+            <div><img src="images\gal20.png" alt="gal6"></div>
+            <div><img src="images\gal21.png" alt="gal7"></div>
+            <div><img src="images\gal22.png" alt="gal8"></div>
+            <div><img src="images\gal23.png" alt="gal9"></div>
+            <div><img src="images\gal24.png" alt="gal10"></div>
+            <div><img src="images\gal25.png" alt="gal11"></div>
+            <div><img src="images\gal26.png" alt="gal12"></div>
+            <div><img src="images\gal27.png" alt="gal13"></div>
+            <div><img src="images\gal28.png" alt="gal14"></div>
+            <div><img src="images\gal29.png" alt="gal15"></div>
+            <div><img src="images\gal30.png" alt="gal16"></div>
+            <div><img src="images\gal1.png" alt="gal17"></div>
+            <div><img src="images\gal2.png" alt="gal18"></div>
+            <div><img src="images\gal3.png" alt="gal19"></div>
+            <div><img src="images\gal4.png" alt="gal10"></div>
+            <div><img src="images\gal6.png" alt="gal21"></div>
+            <div><img src="images\gal7.png" alt="gal22"></div>
+            <div><img src="images\gal8.png" alt="gal23"></div>
+            <div><img src="images\gal9.png" alt="gal24"></div>
+            <div><img src="images\gal10.png" alt="gal25"></div>
+            <div><img src="images\gal11.png" alt="gal26"></div>
+            <div><img src="images\gal12.png" alt="gal27"></div>
+            <div><img src="images\gal13.png" alt="gal28"></div>
+            <div><img src="images\gal14.png" alt="gal29"></div>
+            <div><img src="images\gal15.png" alt="gal30"></div>
+            <div><img src="images\gal31.png" alt="gal31"></div>
+        </div>
+    
+        <div class="custom-buttons">
+          <div class="prev-button">
+              <img src="images\prev.png" alt="Previous" id="prevButton">
+          </div>
+          <div class="next-button">
+              <img src="images\next.png" alt="Next" id="nextButton">
+          </div>
+      </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script>
+         $(document).ready(function() {
+              $('#gallery-slider').slick({
+                  infinite: true,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  prevArrow: '<button type="button" class="slick-prev">&#8592;</button>',
+                  nextArrow: '<button type="button" class="slick-next">&#8594;</button>',
+                  centerMode: true,
+                  variableWidth: true
+              });
+      
+              const slider = $('#gallery-slider').slick('getSlick');
+      
+              function goToPreviousSlide() {
+                  slider.slickPrev();
+              }
+      
+              function goToNextSlide() {
+                  slider.slickNext();
+              }
+      
+              $('.prev-button img').on('click', function() {
+                  goToPreviousSlide();
+              });
+      
+              $('.next-button img').on('click', function() {
+                  goToNextSlide();
+              });
+          });
+
+        
+    </script>
+        
+    </section>  
+        
+    <section class="vloggers" id="vloggers">
+      <div class="imgbgg" id="imgbgg">
+        <img src="images\starbg1.jpg">
+
+      <div class="line1">
+          <img src="images\linestar.png">
+      </div>
+      <div class="line2">
+          <img src="images\linestar.png">
+      </div>
+
+    </div>
+
+    <img src="images\textlogo.png" class="under text" id="under text">
+  
+
+    
+  
+    <div class="container" id="container">
+        <div class="card">
+            <img src="images\oriannaimg.jpg" alt="Image 1" class="thumbnail" data-video="images\Orianna_vlog.mp4">
+            <div class="video-text">ORIANNA VLOG</div>
+        </div>
+        <div class="card">
+            <img src="images\Sennaimg.jpg" alt="Image 2" class="thumbnail" data-video="images\Senna_vlog.mp4">
+            <div class="video-text">SENNA VLOG</div>
+        </div>
+        <div class="card">
+            <img src="images\seraphineimg.jpg" alt="Image 3" class="thumbnail" data-video="images\seraphine_vlog.mp4">
+            <div class="video-text">SERAPHINE VLOG</div>
+        </div>
+    </div>
+    <div class="front" id="front">
+        <img src="images\frontcp.png">
+    </div>
+    
+    <div class="video-container">
+        <video id="video" src="" controls autoplay></video>
+    </div>
+  
+    <script>
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const videoContainer = document.querySelector('.video-container');
+      const video = document.getElementById('video');
+      const textLogo = document.querySelector('.text');
+      const audio = document.querySelector('audio');
+    
+      thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('mouseover', () => {
+          const videoSrc = thumbnail.getAttribute('data-video');
+          video.src = videoSrc;
+          videoContainer.style.display = 'block';
+          video.play();
+          textLogo.style.display = 'none';
+          audio.pause(); 
+        });
+    
+        thumbnail.addEventListener('mouseout', () => {
+          videoContainer.style.display = 'none';
+          video.pause();
+          video.currentTime = 0;
+          textLogo.style.display = 'block';
+          audio.play(); 
+        });
+      });
+    </script>
+
+<div class="sparkles">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+  <img src="images\sparkle.png">
+</div>
+
+    </section>
+    <section class="teamm" id="teamm">
+    <div class="teambg">
+      <img src="images\team background.png">
+  </div>
+
+  <div class="team" id="team">
+      <h1 id="Meet">MEET THE TEAM</h1>
+  </div>
+  
+      <div class="teammembers" id="teammembers">
+          <div class="kim">
+              <img src="images\kimmxbg.png">
+              <img src="images\Star Logo-01.png" class="back">
+              <p>Back-end Developer</p>
+              <p class="name">KIM ALCARAZ</p>
+          </div>
+          <div class="miles">
+              <img src="images\milesnobg.png">
+              <img src="images\Star Logo-01.png" class="back">
+              <p>Front-end Developer</p>
+              <p class="name">MILES AMPARADO</p>
+          </div>
+          <div class="rona">
+              <img src="images\ronanobg.png">
+              <img src="images\Star Logo-01.png" class="back">
+              <p>Ui/Ux Designer</p>
+              <p class="name">RONA CAÑARES</p>
+          </div>
+      </div>
+      <script>
+          const teamMembers = document.querySelectorAll('.teammembers > div');
+
+          teamMembers.forEach((member) => {
+              const imgElement = member.querySelector('img');
+              const nameElement = member.querySelector('.name');
+
+              nameElement.addEventListener('mouseenter', () => {
+              imgElement.style.transform = 'scale(1.1)';
+              imgElement.style.filter = 'none'; 
+              nameElement.style.color = 'rgb(255, 255, 255)';
+              });
+
+              nameElement.addEventListener('mouseleave', () => {
+              imgElement.style.transform = 'scale(0.8)';
+              imgElement.style.filter = 'grayscale(100%)'; 
+              nameElement.style.color = 'rgb(251, 1, 188)';
+              });
+          });
+        </script>
+  </section>
+
+
+    <footer>
+      <div class="logo-container">
+       <img src="images\RIOT GAMES.png" class="riotgames">
+      </div>
+
+      <div class="notice">
+       <p> <br> © 2022 Riot Games, Inc. STAR GUARDIAN, LEAGUE OF LEGENDS, 
+        LEAGUE OF LEGENDS: WILD RIFT,LEGENDS OF RUNETERRA and 
+        any associated logos are trademarks, service marks, and/or 
+        registered trademarks of Riot Games,Inc.</p>
+
+      </div>
+
+        <ul class="footer-buttons">
+          <a href="#"> PRIVACY NOTICE</a> 
+          <a href="#">  TERMS OF SERVICE  </a> 
+          <a href="#">  COOKIE PREFERENCES  </a> 
+      </ul>
+    </footer>
+
+
+
+
+</body>
+</html>
