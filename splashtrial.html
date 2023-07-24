@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hold Button with Waving Tip of Progress Bar</title>
+  <style>
+    .button-container {
+      position: relative;
+      display: inline-block;
+      bottom: -70px;
+      left: 0;
+      width: 100%;
+      height: 95px;
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      bottom: -70px;
+      left: 0;
+      width: 100%;
+      height: 95px;
+      background-color: #ddd;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #4CAF50;
+      width: 0%;
+    }
+
+    .progress-bar-tip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #4CAF50;
+      width: 10%; /* Adjust this value to control the waving tip length */
+      transform-origin: left;
+      animation: waveAnimation 1s infinite;
+    }
+
+    @keyframes waveAnimation {
+      0%, 100% {
+        transform: scaleY(1);
+      }
+      50% {
+        transform: scaleY(0.6);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button id="hold-button">Hold me!</button>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+      <div class="progress-bar-tip"></div>
+    </div>
+  </div>
+
+  <script>
+    const holdButton = document.getElementById('hold-button');
+    const progressBar = document.getElementById('progress-bar');
+    const progressBarTip = document.querySelector('.progress-bar-tip');
+
+    const totalTime = 5000; // 5 seconds in milliseconds
+    const intervalTime = 50; // Interval time for updating the progress bar
+
+    let progress = 0;
+    let intervalId;
+
+    holdButton.addEventListener('mousedown', () => {
+      intervalId = setInterval(updateProgressBar, intervalTime);
+    });
+
+    holdButton.addEventListener('mouseup', () => {
+      clearInterval(intervalId);
+      if (progress === 100) {
+        // Execute the action here (redirect to another HTML file)
+        window.location.href = "try.html";
+      }
+      resetProgressBar();
+    });
+
+    holdButton.addEventListener('mouseleave', () => {
+      clearInterval(intervalId);
+      resetProgressBar();
+    });
+
+    function updateProgressBar() {
+      progress += (intervalTime / totalTime) * 100;
+      if (progress >= 100) {
+        progress = 100;
+      }
+      progressBar.style.width = `${progress}%`;
+    }
+
+    function resetProgressBar() {
+      progress = 0;
+      progressBarTip.style.width = '0%';
+    }
+  </script>
+</body>
+</html>
